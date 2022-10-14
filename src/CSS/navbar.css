@@ -1,0 +1,296 @@
+  .nav-1 {
+      background-color: #00d300;
+      height: 65px;
+      z-index: 1;
+  }
+
+
+  .nav-2 {
+
+
+      background-color: #1c7211;
+
+  }
+
+  a {
+      text-transform: uppercase;
+      margin: 0px 15px 0px 15px;
+
+  }
+
+  .ls-btn {
+      text-transform: uppercase;
+      font: 'roboto';
+      font-weight: 400;
+      font-size: 22px;
+      color: white;
+      width: 207px;
+      height: 58px;
+      border: 1px solid #7ce437;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 40px;
+      transform: translateY(3px);
+      line-height: 40px;
+  }
+
+  .nav-2-text {
+      font: 'roboto';
+      font-weight: 400;
+      font-size: 22px;
+      color: white;
+      line-height: 50px;
+
+  }
+
+  .A {
+      width: 45px;
+      height: 45px;
+      border: 4px solid #FFFFFF;
+      border-radius: 12px;
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      text-align: center;
+      color: #FFFFFF;
+      margin: 2px;
+      line-height: 10px;
+  }
+
+  .btn-A {
+
+      transform: translateX(-50px);
+  }
+
+  .theme {
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      color: #FFFFFF;
+      transform: translateX(-100px);
+  }
+
+  .dropdown {
+      height: 65px;
+      width: 180px;
+
+  }
+
+  .language {
+
+      height: 76px;
+      width: 150px;
+      line-height: 50px;
+      width: 180px;
+      height: 76px;
+      font-family: 'Roboto';
+      font-weight: 400;
+      font-size: 20px;
+      color: #FFFFFF;
+  }
+
+  .language-2 {
+      width: 150px;
+      transform: translateX(20px);
+
+  }
+
+  .dash {
+
+      line-height: 45px;
+
+  }
+
+  .theme-1 {
+      transform: translateX(10px);
+  }
+
+  .theme-2 {
+      transform: translateX(-10px);
+  }
+
+  .nav-2-text {
+      font-family: 'Roboto';
+      font-weight: 400;
+      font-size: 22px;
+
+  }
+
+  .logo {
+      width: 150px;
+      transform: translateX(60px);
+  }
+
+  .language-2 a {
+
+      width: 120px;
+      text-align: center;
+  }
+
+  .dropdown li {
+      background-color: #75B3A4;
+  }
+
+  @media screen and (max-width: 1175px) {
+      .logo {
+          transform: translateX(10px);
+      }
+
+      .txt {
+          font-size: 20px;
+      }
+
+      .A {
+          width: 40px;
+          height: 40px;
+          font-size: 15px;
+      }
+
+      .dropdown {
+
+          height: 60px;
+          width: 130px;
+          transform: translate(-40px, -7px);
+      }
+
+      .language {
+          height: 60px;
+          width: 130px;
+          font-size: 19px;
+      }
+
+      .theme {
+          width: 150px;
+          font-size: 17px;
+      }
+
+  }
+
+  .A:hover {
+      color: aquamarine;
+      border-color: aquamarine;
+  }
+
+  .theme-1:hover {
+      color: white;
+  }
+
+  .theme-2:hover {
+      color: black;
+  }
+
+  .nav-2-text:hover {
+      color: rgb(31, 243, 84) !important;
+  }
+
+  .ls-btn:hover {
+      background-color: rgb(31, 243, 84);
+  }
+
+  @media screen and (max-width: 1095px) {
+      .logo {
+          width: 130px;
+      }
+
+      .txt {
+          font-size: 18px;
+      }
+
+      .nav-2-text {
+          margin-right: 4px;
+      }
+  }
+
+  @media screen and (max-width: 576px) {
+      .txt {
+          font-size: 18px;
+      }
+
+      .A {
+          width: 40px;
+          height: 40px;
+          font-size: 14px;
+          border-radius: 10px;
+
+      }
+
+      .btn-A {
+          transform: translateX(-60px);
+
+
+      }
+
+      .dropdown {
+          height: 60px;
+          width: 100px;
+          transform: translate(-40px, -7px);
+      }
+
+      .language {
+          height: 60px;
+          width: 130px;
+          font-size: 16px;
+      }
+
+      .theme {
+          width: 100px;
+          font-size: 14px;
+          transform: translateX(-60px);
+      }
+
+      .theme-1 {
+
+          margin-left: 10px;
+      }
+
+      .theme-2 {
+          transform: translateX(-90px);
+      }
+
+      .dash {
+          transform: translate(-75px, -4px);
+      }
+  }
+
+  @media screen and (max-width:450px) {
+      .A {
+          display: none;
+      }
+  }
+
+  @media screen and (max-width:308px) {
+      .dropdown {
+          transform: translate(2px, -8px);
+      }
+
+      .language {
+          font-size: 12px;
+      }
+
+      .theme {
+          margin-top: 3px;
+          transform: translateX(-30px);
+          font-size: 12px;
+      }
+
+      .theme-2 {
+          transform: translateX(-70px);
+      }
+
+      .dash {
+          transform: translate(-50px, -4px);
+      }
+  }
+
+  .sec {
+
+      margin-left: 40px;
+  }
+
+  .sec a {
+      text-transform: uppercase;
+
+      font-family: 'roboto';
+      font-weight: 400;
+  }

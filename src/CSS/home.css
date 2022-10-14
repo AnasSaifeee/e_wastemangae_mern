@@ -1,0 +1,172 @@
+  * {
+      margin: 0;
+      padding: 0;
+  }
+
+  body {
+      display: block;
+      height: 100vh;
+      width: 100vw;
+  }
+
+  .secondpart {
+      margin-top: 2rem;
+      top: 0%;
+      background: #EEEEEE;
+      width: 100vw;
+      min-height: 500px;
+  }
+
+  .slideoneheading {
+      position: absolute;
+      width: 30vw;
+      height: 10%;
+      left: 10%;
+      top: 20%;
+      font-family: 'Bai Jamjuree';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 3vw;
+      line-height: 100%;
+      color: #019934;
+  }
+
+  .slideonepara {
+      position: absolute;
+      width: 40vw;
+      height: 10rem;
+      left: 17%;
+      top: 35%;
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 1.5vw;
+      line-height: 125%;
+      color: #216B3F;
+  }
+
+  .registerbttn {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      left: 17%;
+      top: 60%;
+      background: #216B3F;
+      border-radius: none;
+      font-size: 1.4vw;
+      text-align: center;
+      justify-content: center;
+  }
+
+  .readmore {
+      position: relative;
+      left: 20%;
+      top: 35%;
+      font-family: 'Bai Jamjuree';
+      font-style: normal;
+      font-weight: 400;
+      line-height: 100%;
+  }
+
+  .aboutus {
+      position: relative;
+      width: fit-content;
+      left: 20%;
+      top: 30%;
+      font-family: 'Bai Jamjuree';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 48px;
+      line-height: 100%;
+      color: #019934;
+  }
+
+  .image {
+      position: absolute;
+      top: 20%;
+      left: 65%;
+      width: 18%;
+      display: block;
+  }
+
+  .secondcontainer {
+      position: relative;
+      top: 9rem;
+  }
+
+  .firstslideimage {
+      width: 100%;
+      height: 100%;
+  }
+
+  .services {
+      text-align: center;
+  }
+
+  .mobile-firstslide {
+      display: none;
+      background: grey;
+      text-align: center;
+      min-height: 300px;
+      padding: 1rem;
+  }
+
+  .row {
+      display: flex;
+      justify-content: center;
+  }
+
+  .col {
+      margin-top: 1rem;
+      text-align: center;
+  }
+
+  @media only screen and (max-width:700px) {
+
+      /* .mobile-firstslide {
+          background-image: url("/frontend/src/Images/banner.png");
+      } */
+
+      .firstpart {
+          display: none;
+      }
+
+      .parasecond {
+          width: 15rem;
+      }
+
+      .services {
+          font-size: 3rem;
+      }
+
+      .secondcontainer {
+          top: 4rem;
+      }
+
+      .mobile-firstslide {
+          display: block;
+
+      }
+
+      .mobile-recycle-img {
+          width: 30%;
+          display: flex;
+          align-items: center;
+          text-align: center;
+      }
+  }
+
+  @media only screen and (max-width:330px) {
+      .parasecond {
+          width: 10rem;
+          font-size: 20px;
+      }
+
+      .firstpart {
+          display: none;
+      }
+
+      .secondcontainer {
+          top: 4rem;
+      }
+  }
