@@ -3,6 +3,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './Navbar'
 import Footer from './Footer'
 import './CSS/home.css'
+import './Dashboard'
+
+import {Link} from "react-router-dom"
 
 function importAll(r) {
   let images = {};
