@@ -1,85 +1,101 @@
-import React from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Navbar from './Navbar'
-import Footer from './Footer'
-import './CSS/home.css'
+import React, { useState } from 'react'
 import './CSS/signup.css'
-import './Dashboard'
-function importAll(r) {
-  let images = {};
-  r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
-  return images;
+import 'bootstrap/dist/css/bootstrap.min.css';
+const Signup = () => {
+    const [name,setname]=useState("")
+    const [username,setusername]=useState("")
+    const [email,setemail]=useState("")
+    const [role,setrole]=useState("")
+    const [password,setpassword]=useState("")
+    const [confirmpassword,setconfirmpassword]=useState("")
+    
+    async function registerUser(e){
+        e.preventDefault()
+
+        const response=await fetch('http://localhost:4000/api/signup',{
+            method:'POST',
+            headers:{
+                'Content-Type':'application/json',
+            },
+            body:JSON.stringify({
+                name,
+                username,
+                email,
+                role,
+                password,
+                confirmpassword,    
+            })
+        })
+
+        const data = await response.json()
+        console.log(data)
+    }
+  return (
+    <>
+    
+    <section className="wrapper">
+  <div className="container">
+    <div className="col-sm-8 offset-sm-2 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4 text-center">
+      <form className="rounded bg-white shadow p-5"  onSubmit={registerUser}>
+        <h3 className="text-dark fw-bolder fs-4 mb-2">Create an Account</h3>
+        <div className="text-muted fw-normal mb-4">
+          Already have an Account? <a href="/signin" className="text-primary fw-bold text-decoration-none">Sign-In</a>
+        </div>
+        <div className="form-floating mb-3">
+          <input type="text" className="form-control" name="name" placeholder="Full Name" value={name} onChange={(e)=>setname(e.target.value)} />
+          <label htmlFor="floatingFullName">Full Name</label>
+        </div>
+        <div className="form-floating mb-3">
+          <input type="text" className="form-control" id="floatingInput" name="username" placeholder="enter username" value={username} onChange={(e)=>setusername(e.target.value)} />
+          <label htmlFor="floatingInput">Username</label>
+        </div>
+        <div className="form-floating mb-3">
+          <input type="text" className="form-control" id="floatingInput" name="email" placeholder="name@example.com" value={email} onChange={(e)=>setemail(e.target.value)} />
+          <label htmlFor="floatingInput">Email</label>
+        </div>
+        <div className="form-floating mb-3">
+          <select type="text" className="form-control" id="role" name="role" style={{textAlign: 'center'}}>
+            <option value={role} onClick
+            ={(e)=>setrole(e.target.value)}>Select Role</option>
+            <option value={role} onClick
+            ={(e)=>setrole(e.target.value)}>Donator</option>
+            <option value={role} onClick
+            ={(e)=>setrole(e.target.value)}>Junk Collector</option>
+            <option value={role} onClick
+            ={(e)=>setrole(e.target.value)}>NGO</option>
+            <option value={role} onClick
+            ={(e)=>setrole(e.target.value)}>Office</option>
+            <option value={role} onClick
+            ={(e)=>setrole(e.target.value)}>Dealer</option>
+            <option value={role} onClick
+            ={(e)=>setrole(e.target.value)}>Recycling Plant</option>
+          </select>
+        </div>
+        <div className="form-floating mb-3">
+          <input type="text" className="form-control" id="floatingPassword" name="password" placeholder="Password" value={password} onChange={(e)=>setpassword(e.target.value)} />
+          <label htmlFor="floatingPassword">Password</label>
+          <span className="password-info mt-2">
+            Use 8 or more characters with atleast one letter,number &amp; symbol.
+          </span>
+        </div>
+        <div className="form-floating mb-3">
+          <input type="text" className="form-control" id="floatingConfirmPassword" name="confirmpassword" placeholder="Confirm Password" value={confirmpassword} onChange={(e)=>setconfirmpassword(e.target.value)} />
+          <label htmlFor="floatingConfirmPassword">Confirm Password</label>
+        </div>
+        <div className="form-check d-flex align-items-center">
+          <input className="form-check-input" type="checkbox" id="gridCheck" />
+          <label className="form-check-label ms-2" htmlFor="gridCheck">
+            I agree <a href="#">Terms &amp; Conditions</a>.
+          </label>
+        </div>
+        <button type="submit" className="btn btn-primary submi_btn w-100 my-4">Continue</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+    </>
+  )
 }
 
-const images = importAll(require.context('./Images', false, /\.(png|jpe?g|svg)$/));
-const signup = ('/signup', () => {
-    return (
-        <>
-        <Navbar />
-        <section class="wrapper">
-        <div class="container">
-            <div class="col-sm-8 offset-sm-2 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4 text-center">
-                <form class="rounded bg-white shadow p-5" action="/signup" method = "post">
-                    <h3 class="text-dark fw-bolder fs-4 mb-2">Create an Account</h3>
-                    <div class="text-muted fw-normal mb-4">
-                        Already have an Account? <a href="/signin" class="text-primary fw-bold text-decoration-none">Sign-In</a>
-                    </div>
-                    
-                    <div class="form-floating mb-3">
-                        {/* <input type="text" class="form-control" name = "name" id="floatingFullName" placeholder="Full Name"> */}
-                        <label for="floatingFullName">Full Name</label>
-                    </div>
-
-                    <div class="form-floating mb-3">
-                        {/* <input type="text" class="form-control" id="floatingInput" name = "username" placeholder="enter username"> */}
-                        <label for="floatingInput">Username</label>
-                    </div>
-
-                    <div class="form-floating mb-3">
-                        {/* <input type="text" class="form-control" id="floatingInput" name = "email" placeholder="name@example.com"> */}
-                        <label for="floatingInput">Email</label>
-                    </div>
-
-                    <div class="form-floating mb-3">
-                        <select type="text" class="form-control" id="role" name = "role"  style="text-align: center; ">
-                          <option value="NULL">Select Role</option>
-                          <option value="Donator">Donator</option>
-                          <option value="Junk Collector">Junk Collector</option>
-                          <option value="NGO">NGO</option>
-                          <option value="Office">Office</option>
-                          <option value="Dealer">Dealer</option>
-                          <option value="Recycling Plant">Recycling Plant</option>
-                        </select>
-                      </div>
-
-                    <div class="form-floating mb-3">
-                        {/* <input type="text" class="form-control" id="floatingPassword" name = "password" placeholder="Password"> */}
-                        <label for="floatingPassword">Password</label>
-                        <span class="password-info mt-2">
-                            Use 8 or more characters with atleast one letter,number & symbol.
-                        </span>
-                    </div>
-
-                    <div class="form-floating mb-3">
-                        {/* <input type="text" class="form-control" id="floatingConfirmPassword" name = "confirmpassword" placeholder="Confirm Password"> */}
-                        <label for="floatingConfirmPassword">Confirm Password</label>
-                    </div>
-
-                    <div class="form-check d-flex align-items-center">
-                        {/* <input class="form-check-input" type="checkbox" id="gridCheck"> */}
-                        <label class="form-check-label ms-2" for="gridCheck">
-                          I agree <a href="#">Terms & Conditions</a>.
-                        </label>
-                      </div>
-                   
-                    <button type="submit" class="btn btn-primary submi_btn w-100 my-4">Continue</button>
-                </form>
-            </div>
-        </div>
-    </section>
-    <Footer />
-        </>
-    )
-  
-}) ; 
-export default signup
+export default Signup
