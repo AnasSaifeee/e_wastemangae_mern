@@ -1,18 +1,25 @@
-const {
-    createPool
-}=require('mysql2');
+const mysql = require('mysql2');
 
-const pool = createPool({
+const conn = mysql.createConnection({
     host:'localhost',
     user:'root',
     password:'123456',
-    database:"birthday_reminder",
+    database:"accordion_data",
+    port: '3306',
     connectionLimit:10
-})
+}).then(function (session) {
+    session.createSchema('e_waste_data').then(function(schema){
+        console.log('Schema created');
+        session.close();
+    });
+}).catch(function (err) {
+    console.log(err.message);
+    console.log(err.stack);
+});
 
-pool.query(`select * from user_details `,(err,result,fields)=>{
-    if(err){
-        return console.log(err);
-    }
-    return console.log(result)
-})
+
+
+conn.connect(function(err) {
+    if (err) throw err;
+    console.log("Connected!");
+});

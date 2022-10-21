@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './CSS/signup.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Axios from 'axios'
 const Signup = () => {
     const [name,setname]=useState("")
     const [username,setusername]=useState("")
@@ -9,34 +10,48 @@ const Signup = () => {
     const [password,setpassword]=useState("")
     const [confirmpassword,setconfirmpassword]=useState("")
     
-    async function registerUser(e){
-        e.preventDefault()
+    // async function registerUser(e){
+    //     e.preventDefault()
 
-        const response=await fetch('http://localhost:4000/api/signup',{
-            method:'POST',
-            headers:{
-                'Content-Type':'application/json',
-            },
-            body:JSON.stringify({
-                name,
-                username,
-                email,
-                role,
-                password,
-                confirmpassword,    
-            })
-        })
+    //     const response=await fetch('http://localhost:4000/api/signup',{
+    //         method:'POST',
+    //         headers:{
+    //             'Content-Type':'application/json',
+    //         },
+    //         body:JSON.stringify({
+    //             name,
+    //             username,
+    //             email,
+    //             role,
+    //             password,
+    //             confirmpassword,    
+    //         })
+    //     })
 
-        const data = await response.json()
-        console.log(data)
-    }
+    //     const data = await response.json()
+    //     console.log(data)
+    // }
+
+  const register = () => {
+    Axios.post("http://localhost:4000/signup", {
+      name: name,
+      username: username,
+      email: email,
+      role: role,
+      password: password,
+      confirmpassword: confirmpassword,
+    }).then((response) => {
+      console.log(response);
+    });
+  };
+
   return (
     <>
     
     <section className="wrapper">
   <div className="container">
     <div className="col-sm-8 offset-sm-2 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4 text-center">
-      <form className="rounded bg-white shadow p-5"  onSubmit={registerUser}>
+      <form className="rounded bg-white shadow p-5"  onSubmit={register}>
         <h3 className="text-dark fw-bolder fs-4 mb-2">Create an Account</h3>
         <div className="text-muted fw-normal mb-4">
           Already have an Account? <a href="/signin" className="text-primary fw-bold text-decoration-none">Sign-In</a>
@@ -88,7 +103,7 @@ const Signup = () => {
             I agree <a href="#">Terms &amp; Conditions</a>.
           </label>
         </div>
-        <button type="submit" className="btn btn-primary submi_btn w-100 my-4">Continue</button>
+        <button type="submit" className="btn btn-primary submi_btn w-100 my-4" onClick={register}>Register</button>
       </form>
     </div>
   </div>
