@@ -5,13 +5,23 @@ import Axios from 'axios'
 const Signin = () => {
     const [email,setemail]=useState("")
     const [password,setpassword]=useState("")
+
+    const [loginstatus, setLoginstatus] = useState("")
     
-  const register = () => {
+  const login = () => {
     Axios.post("http://localhost:4000/signin", {
       email: email,
       password: password,
     }).then((response) => {
-      console.log(response);
+
+      if(response.data.message)
+      {
+        setLoginstatus(response.data.message)
+      }
+      else{
+        setLoginstatus(response.data[0].email)
+
+      }
     });
   };
 
@@ -21,7 +31,7 @@ const Signin = () => {
     <section className="wrapper">
   <div className="container">
     <div className="col-sm-8 offset-sm-2 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4 text-center">
-      <form className="rounded bg-white shadow p-5"  onSubmit={register}>
+      <form className="rounded bg-white shadow p-5"  onSubmit={login}>
         <h3 className="text-dark fw-bolder fs-4 mb-2">Sign-in</h3>
         <div className="text-muted fw-normal mb-4">
           Create a new Account? <a href="/signup" className="text-primary fw-bold text-decoration-none">Sign-In</a>
@@ -37,10 +47,11 @@ const Signin = () => {
             Use 8 or more characters with atleast one letter,number &amp; symbol.
           </span>
         </div>
-        <button type="submit" className="btn btn-primary submi_btn w-100 my-4" onClick={register}>Login</button>
+        <button type="submit" className="btn btn-primary submi_btn w-100 my-4" onClick={login}>Login</button>
       </form>
     </div>
   </div>
+  <h1>{loginstatus}</h1>
 </section>
 
     </>

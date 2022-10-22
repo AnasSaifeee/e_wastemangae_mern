@@ -11,7 +11,7 @@ app.use(express.json())
 var db = mysql.createConnection({
     host:'localhost',
     user:'root',
-    password:'123456',
+    password:'root123',
     database:"e_waste",
     port: '3306'
 });
@@ -39,22 +39,19 @@ app.post("/signup", (req, res)=>{
 });
 
 app.post('/signin', (req, res)=>{
-    const name = req.body.name;
-    const username = req.body.username;
     const email = req.body.email;
-    const role = req.body.role;
     const password = req.body.password;
-    const confirmpassword = req.body.confirmpassword;
     
     db.query(
-        "SELECT * FROM signup_data email = ? AND password = ?", 
+        "SELECT * FROM signup_data WHERE email = ? AND password = ?", 
         [ email, password],
         (err, result) => {
             
             if (err){
                 res.send({err: err});
             }
-            if (result){
+
+            if (result.length > 0){
                 res.send(result)
             } else {
                 res.send({message: "Wrong Email/Password combination!"})
