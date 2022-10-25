@@ -22,7 +22,7 @@ const Schedule = () => {
     const[comment,setcomment]=useState('')
 
     async function Request(e){
-        e.preventDefault()
+       
 
         const response=await fetch('http://localhost:4000/request',{
             method:'POST',
@@ -163,16 +163,12 @@ const Schedule = () => {
             </div>
           </div>
         </div>
-        <div className="col-12">
-          <button className="w-25 btn btn-primary btn-lg" type="submit">Add New Items</button>
-        </div>
         <div className="col-12 mb-3">
           <label htmlFor="Comment" className="form-label"><h6>Add Comment</h6></label>
           <textarea className="form-control" value={comment} onChange={(e)=>setcomment(e.target.value)} id="Comment" rows={3} defaultValue={""} />
         </div>
         <div className="col-12">
           <button className="btn btn-primary btn-lg" type="submit">Confirm and Send Request</button>
-          <button className="btn btn-primary btn-lg" type="submit">Save as draft</button>
         </div>
       </div></form>
   </div></div>
