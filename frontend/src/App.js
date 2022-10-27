@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
-import DashboardNavbar from './components/Navbar';
+import DashboardNavbar from './Single user Dashboard/components/Navbar';
 import Navbar from './Navbar';
 import { BrowserRouter, Route,Router,Routes  } from 'react-router-dom';
 import Home from './Home';
-import Homepage from './pages/Home';
-import Notifications from './pages/Notifications';
-import Schedule from './pages/Schedule';
+import Homepage from './Single user Dashboard/pages/Home';
+import Notifications from './Single user Dashboard/pages/Notifications';
+import Schedule from './Single user Dashboard/pages/Schedule';
 import Profile from './Profile';
 import Signin from './signin';
 import Signup from './signup';
@@ -23,16 +23,16 @@ function App() {
 
     <BrowserRouter>
 
-           <Navbar/>
+           <DashboardNavbar/>
       <Routes>
-          <Route path='/' exact element={<Home/>} />
+          <Route path='/' exact element={<Homepage/>} />
           <Route path='/notifications' element={<Notifications/>} />
           <Route path='/schedule' element={<Schedule/>} />
           
       </Routes>
       </BrowserRouter>
 
-      <Signin />
+      {/* <Signin /> */}
     </>
   );
 }
