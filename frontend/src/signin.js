@@ -49,7 +49,7 @@ const Signin = (e) => {
                   href="/signup"
                   className="text-primary fw-bold text-decoration-none"
                 >
-                  Sign-In
+                  Sign-Up
                 </a>
               </div>
               <div className="form-floating mb-3">

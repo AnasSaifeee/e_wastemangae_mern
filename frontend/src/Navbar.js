@@ -54,9 +54,9 @@ const Navbar = (props) => {
             <a className="nav-link text-white nav-2-text txt " href="/guidelines">User guidelines</a>
           </li>
           <li className="nav-item">
-            {/* <a className="nav-link text-white nav-2-text txt " href="/signup">Login/Signup</a>
-             */}
-             <Link onClick={props.signup} className="nav-link text-white nav-2-text txt ">Login/Signup</Link>
+            <a className="nav-link text-white nav-2-text txt " href="/signin">Login/Signup</a>
+             
+             {/* <Link onClick={props.signup} className="nav-link text-white nav-2-text txt ">Login/Signup</Link> */}
           </li>
           <li className="nav-item ">
             <a className="nav-link text-white nav-2-text txt" href="https://console.dialogflow.com/api-client/demo/embedded/c87db62b-dcef-4c3b-a184-b6dc558a22a5">FAQs</a>

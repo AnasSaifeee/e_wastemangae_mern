@@ -23,16 +23,17 @@ function App() {
 
     <BrowserRouter>
 
-           <DashboardNavbar/>
+           <Navbar/>
       <Routes>
-          <Route path='/' exact element={<Homepage/>} />
-          <Route path='/notifications' element={<Notifications/>} />
-          <Route path='/schedule' element={<Schedule/>} />
-          
+          <Route path='/' exact element = {<Homepage/>} />
+          <Route path='/signin' element = {<Signin/>} />
+          <Route path='/signup' element = {<Signup/>} />
+          <Route path='/Dashboard' element = {<Dashboard />} />
+                
       </Routes>
       </BrowserRouter>
 
-      {/* <Signin /> */}
+      <Signin />
     </>
   );
 }
