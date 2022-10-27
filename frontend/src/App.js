@@ -5,19 +5,17 @@ import { BrowserRouter, Route,Routes  } from 'react-router-dom';
 import Home from './pages/Home';
 import Notifications from './pages/Notifications';
 import Schedule from './pages/Schedule';
-<<<<<<< HEAD
 import Profile from './Profile';
-=======
 import Signin from './signin';
->>>>>>> 79cdc6a60fa8901562ba5d4477c9b4be1b704e41
+
 
 function App() {
   return (
     <>
-<<<<<<< HEAD
+
     {/* <Profile/> */}
-    <BrowserRouter>
-=======
+    {/* <BrowserRouter> */}
+
     {/* <BrowserRouter>
 >>>>>>> 79cdc6a60fa8901562ba5d4477c9b4be1b704e41
            <Navbar/>
