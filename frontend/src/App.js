@@ -5,10 +5,12 @@ import { BrowserRouter, Route,Routes  } from 'react-router-dom';
 import Home from './pages/Home';
 import Notifications from './pages/Notifications';
 import Schedule from './pages/Schedule';
+import Profile from './Profile';
 
 function App() {
   return (
     <>
+    {/* <Profile/> */}
     <BrowserRouter>
            <Navbar/>
       <Routes>
