@@ -13,11 +13,11 @@ function App() {
   return (
     <>
 
-    <Profile/>
+    {/* <Profile/> */}
     {/* <BrowserRouter> */}
 
-    {/* <BrowserRouter>
->>>>>>> 79cdc6a60fa8901562ba5d4477c9b4be1b704e41
+    <BrowserRouter>
+
            <Navbar/>
       <Routes>
           <Route path='/' exact element={<Home/>} />
@@ -25,7 +25,7 @@ function App() {
           <Route path='/schedule' element={<Schedule/>} />
           
       </Routes>
-      </BrowserRouter> */}
+      </BrowserRouter>
 
       {/* <Signin /> */}
     </>

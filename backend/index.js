@@ -99,6 +99,16 @@ app.post('/request',(req,res)=>
                 }
         
             );
+    db.query(
+              "SELECT pincode FROM collector_verification" 
+                [state,district,city,pincode],
+                (err, result) => {
+                    console.log(err);
+                    console.log(result);
+                }
+        
+            );
+    
     
   
    res.json({status:'ok'})
