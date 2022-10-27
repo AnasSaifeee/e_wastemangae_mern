@@ -2,6 +2,7 @@ import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './CSS/navbar.css'
 import './signin'
+import { Link } from 'react-router-dom';
 function importAll(r) {
   let images = {};
   r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
@@ -9,7 +10,7 @@ function importAll(r) {
 }
 
 const images = importAll(require.context('./Images', false, /\.(png|jpe?g|svg)$/));
-const Navbar = () => {
+const Navbar = (props) => {
   return (
    <>
   <div>
@@ -53,7 +54,9 @@ const Navbar = () => {
             <a className="nav-link text-white nav-2-text txt " href="/guidelines">User guidelines</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link text-white nav-2-text txt " href="./signin">Login/Signup</a>
+            {/* <a className="nav-link text-white nav-2-text txt " href="/signup">Login/Signup</a>
+             */}
+             <Link onClick={props.signup} className="nav-link text-white nav-2-text txt ">Login/Signup</Link>
           </li>
           <li className="nav-item ">
             <a className="nav-link text-white nav-2-text txt" href="https://console.dialogflow.com/api-client/demo/embedded/c87db62b-dcef-4c3b-a184-b6dc558a22a5">FAQs</a>

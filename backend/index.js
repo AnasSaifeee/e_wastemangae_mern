@@ -1,5 +1,5 @@
 const express = require('express')
-const mysql= require('mysql2')
+const mysql_connector = require('mysql2')
 
 
 const app = express()
@@ -8,7 +8,7 @@ const cors = require('cors')
 app.use(cors())
 app.use(express.json())
 
-var db = mysql.createConnection({
+var db = mysql_connector.createConnection({
     host:'localhost',
     user:'root',
     password:'123456',
@@ -45,7 +45,7 @@ app.post('/signin', (req, res)=>{
     
     db.query(
         "SELECT * FROM signup_data WHERE email = ? AND password = ?", 
-        [ email, password],
+        [email, password],
         (err, result) => {
             
             if (err){
@@ -86,7 +86,7 @@ app.post('/request',(req,res)=>
     
     db.query(
                 "INSERT INTO request (name, email, address, district, city, state,pincode,contact_number,date,time,ename,equantity,type,weight,img1,img2,img3,comment) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", 
-                [name, email, address, district, city, state,pincode,contact_number,date,time,ename,equantity,type,weight,img1,img2,img3,comment],
+                [name, email, address, district, city, state, pincode, contact_number,date,time,ename,equantity,type,weight,img1,img2,img3,comment],
                 (err, result) => {
                     console.log(err);
                 }

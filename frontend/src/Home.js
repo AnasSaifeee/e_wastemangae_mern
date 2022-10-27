@@ -4,7 +4,6 @@ import Navbar from './Navbar'
 import Footer from './Footer'
 import './CSS/home.css'
 import './Dashboard'
-
 import {Link} from "react-router-dom"
 
 function importAll(r) {
@@ -12,12 +11,12 @@ function importAll(r) {
   r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
   return images;
 }
-
 const images = importAll(require.context('./Images', false, /\.(png|jpe?g|svg)$/));
 const Home = () => {
+   
   return (
   <>
-  <Navbar/>
+  <Navbar />
   <div>
   <div className="container-fluid m-0 p-0 mobliecontainer">
     <div className="container-fluid mobile-firstslide">
