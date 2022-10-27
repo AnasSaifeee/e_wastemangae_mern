@@ -15,7 +15,7 @@ const cors = require('cors')
 app.use(cors())
 app.use(express.json())
 
-var db = mysql.createConnection({
+var db = mysql_connector.createConnection({
     host:'localhost',
     user:'root',
     password:'123456',
@@ -115,23 +115,6 @@ app.post('/request',(req,res)=>
 
 })
 
-app.post('/verification',(req,res)=>{
-    
-    const state=req.body.state
-    const district=req.body.district
-    const city=req.body.city
-    const pincode=req.body.pincode
-   db.query(
-
-      VERIFICATION_QUERY, 
-       [state,district,city,pincode],
-       (err, result) => {
-           console.log(err);
-       }
-   );
-    console.log(req.body)
-    res.json({status:'ok'})
-})
 
 app.listen(process.env.PORT, () => {
     console.log("running server");

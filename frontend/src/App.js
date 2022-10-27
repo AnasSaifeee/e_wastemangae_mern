@@ -1,15 +1,20 @@
 import React from 'react';
 import './App.css';
-import Navbar from './components/Navbar';
-import { BrowserRouter, Route,Routes  } from 'react-router-dom';
-import Home from './pages/Home';
+import DashboardNavbar from './components/Navbar';
+import Navbar from './Navbar';
+import { BrowserRouter, Route,Router,Routes  } from 'react-router-dom';
+import Home from './Home';
+import Homepage from './pages/Home';
 import Notifications from './pages/Notifications';
 import Schedule from './pages/Schedule';
 import Profile from './Profile';
 import Signin from './signin';
+import Signup from './signup';
+import Dashboard from './Dashboard';
 
 
 function App() {
+
   return (
     <>
 
@@ -27,7 +32,7 @@ function App() {
       </Routes>
       </BrowserRouter>
 
-      {/* <Signin /> */}
+      <Signin />
     </>
   );
 }
