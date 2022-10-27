@@ -5,11 +5,12 @@ import { BrowserRouter, Route,Routes  } from 'react-router-dom';
 import Home from './pages/Home';
 import Notifications from './pages/Notifications';
 import Schedule from './pages/Schedule';
+import Signin from './signin';
 
 function App() {
   return (
     <>
-    <BrowserRouter>
+    {/* <BrowserRouter>
            <Navbar/>
       <Routes>
           <Route path='/' exact element={<Home/>} />
@@ -17,7 +18,9 @@ function App() {
           <Route path='/schedule' element={<Schedule/>} />
           
       </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
+
+      <Signin />
     </>
   );
 }
