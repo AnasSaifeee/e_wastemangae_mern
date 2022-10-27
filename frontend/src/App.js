@@ -13,7 +13,7 @@ function App() {
   return (
     <>
 
-    {/* <Profile/> */}
+    <Profile/>
     {/* <BrowserRouter> */}
 
     {/* <BrowserRouter>
@@ -27,7 +27,7 @@ function App() {
       </Routes>
       </BrowserRouter> */}
 
-      <Signin />
+      {/* <Signin /> */}
     </>
   );
 }
