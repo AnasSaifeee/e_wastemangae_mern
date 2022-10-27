@@ -22,7 +22,7 @@ const Schedule = () => {
     const[comment,setcomment]=useState('')
 
     async function Request(e){
-       
+       e.preventDefault()
 
         const response=await fetch('http://localhost:4000/request',{
             method:'POST',

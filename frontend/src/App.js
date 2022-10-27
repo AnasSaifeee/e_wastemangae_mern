@@ -7,15 +7,22 @@ import Home from './Home';
 import Homepage from './pages/Home';
 import Notifications from './pages/Notifications';
 import Schedule from './pages/Schedule';
+import Profile from './Profile';
 import Signin from './signin';
 import Signup from './signup';
 import Dashboard from './Dashboard';
+
 
 function App() {
 
   return (
     <>
+
+    <Profile/>
+    {/* <BrowserRouter> */}
+
     {/* <BrowserRouter>
+>>>>>>> 79cdc6a60fa8901562ba5d4477c9b4be1b704e41
            <Navbar/>
       <Routes>
           <Route path='/' exact element={<Home/>} />
@@ -25,14 +32,7 @@ function App() {
       </Routes>
       </BrowserRouter> */}
 
-      <BrowserRouter>
-
-        <Routes>
-          <Route path ='/signin' element={<Signin />}/>
-          <Route path = '/Dashboard' element={<Dashboard />}/>
-        </Routes>
-      </BrowserRouter>
-
+      <Signin />
     </>
   );
 }

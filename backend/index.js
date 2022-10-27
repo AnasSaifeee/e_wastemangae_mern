@@ -1,6 +1,13 @@
 const express = require('express')
-const mysql_connector = require('mysql2')
-
+const mysql= require('mysql2')
+require("dotenv").config()
+const {
+    SIGNUP_QUERY,
+    SIGNIN_QUERY,
+    REQUEST_QUERY,
+    REDUNDANCY_CHECK_QUERY,
+    VERIFICATION_QUERY
+}=require('./queries')
 
 const app = express()
 const cors = require('cors')
@@ -12,7 +19,7 @@ var db = mysql_connector.createConnection({
     host:'localhost',
     user:'root',
     password:'123456',
-    database:"e_waste",
+    database:'e_waste',
     port:'3306'
    
 });
@@ -27,7 +34,7 @@ app.post("/signup", (req, res)=>{
     const confirmpassword = req.body.confirmpassword;
     
     db.query(
-        "INSERT INTO signup_data (name, username, email, role, password, confirmpassword) VALUES (?,?,?,?,?,?)", 
+        SIGNUP_QUERY, 
         [ name, username, email, role, password, confirmpassword],
         (err, result) => {
             console.log(err);
@@ -35,7 +42,7 @@ app.post("/signup", (req, res)=>{
 
     );
 
-    db.query("DELETE FROM signup_data WHERE id NOT IN (SELECT MIN(id) FROM signup_data GROUP BY name,username,email,role, password, confirmpassword)");
+    db.query(REDUNDANCY_CHECK_QUERY);
     
 });
 
@@ -44,8 +51,8 @@ app.post('/signin', (req, res)=>{
     const password = req.body.password;
     
     db.query(
-        "SELECT * FROM signup_data WHERE email = ? AND password = ?", 
-        [email, password],
+        SIGNIN_QUERY, 
+        [ email, password],
         (err, result) => {
             
             if (err){
@@ -85,21 +92,21 @@ app.post('/request',(req,res)=>
     const comment= req.body.comment;
     
     db.query(
-                "INSERT INTO request (name, email, address, district, city, state,pincode,contact_number,date,time,ename,equantity,type,weight,img1,img2,img3,comment) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", 
-                [name, email, address, district, city, state, pincode, contact_number,date,time,ename,equantity,type,weight,img1,img2,img3,comment],
+               REQUEST_QUERY, 
+                [name, email, address, district, city, state,pincode,contact_number,date,time,ename,equantity,type,weight,img1,img2,img3,comment],
                 (err, result) => {
                     console.log(err);
                 }
         
             );
     
-   console.log(req.body);
+  
    res.json({status:'ok'})
 
 })
 
 
-app.listen(4000, () => {
+app.listen(process.env.PORT, () => {
     console.log("running server");
 });
 
