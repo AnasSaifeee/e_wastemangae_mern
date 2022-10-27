@@ -21,18 +21,16 @@ function App() {
     {/* <Profile/> */}
     {/* <BrowserRouter> */}
 
-    <BrowserRouter>
-
-           <Navbar/>
+     <BrowserRouter>
       <Routes>
-          <Route path='/' exact element={<Home/>} />
-          <Route path='/notifications' element={<Notifications/>} />
-          <Route path='/schedule' element={<Schedule/>} />
-          
+          <Route path='/' exact element = {<Home/>} />
+          <Route path='/signin' element = {<Signin/>} />
+          <Route path='/signup' element = {<Signup/>} />
+          <Route path='/Dashboard' element = {<Dashboard />} />
+                
       </Routes>
-      </BrowserRouter>
-
-      <Signin />
+      </BrowserRouter> 
+      
     </>
   );
 }

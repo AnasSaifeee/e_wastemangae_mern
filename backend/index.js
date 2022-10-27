@@ -1,5 +1,5 @@
 const express = require('express')
-const mysql= require('mysql2')
+const mysql_connector = require('mysql2')
 require("dotenv").config()
 const {
     SIGNUP_QUERY,
