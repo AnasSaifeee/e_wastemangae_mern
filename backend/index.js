@@ -1,5 +1,5 @@
 const express = require('express')
-const mysql_connector = require('mysql2')
+const mysql_connector= require('mysql2')
 require("dotenv").config()
 const {
     SIGNUP_QUERY,
@@ -90,7 +90,7 @@ app.post('/request',(req,res)=>
     const img2 = req.body.img2;
     const img3 = req.body.img3;
     const comment= req.body.comment;
-    
+
     db.query(
                REQUEST_QUERY, 
                 [name, email, address, district, city, state,pincode,contact_number,date,time,ename,equantity,type,weight,img1,img2,img3,comment],
@@ -100,10 +100,12 @@ app.post('/request',(req,res)=>
         
             );
     db.query(
-              "SELECT pincode FROM collector_verification" 
-                [state,district,city,pincode],
+              
+              "SELECT pincode FROM collector_verification WHERE pincode=? ", 
+              [pincode],
+                         
                 (err, result) => {
-                    console.log(err);
+                    
                     console.log(result);
                 }
         
