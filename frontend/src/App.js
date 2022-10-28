@@ -11,6 +11,9 @@ import Profile from './Profile';
 import Signin from './signin';
 import Signup from './signup';
 import Dashboard from './Dashboard';
+import Cdashboard from './Collector Dashboard/components/Navbar'
+import Chome from './Collector Dashboard/pages/Home'
+import Cnotifications from './Collector Dashboard/pages/Notifications'
 
 
 function App() {
@@ -23,17 +26,15 @@ function App() {
 
     <BrowserRouter>
 
-           <Navbar/>
+           <Cdashboard/>
       <Routes>
-          <Route path='/' exact element = {<Homepage/>} />
-          <Route path='/signin' element = {<Signin/>} />
-          <Route path='/signup' element = {<Signup/>} />
-          <Route path='/Dashboard' element = {<Dashboard />} />
-                
+          <Route path='/' exact element = {<Chome/>} />
+          <Route path='/notifications' element = {<Cnotifications/>} />
+    
       </Routes>
       </BrowserRouter>
 
-      <Signin />
+      {/* <Signin /> */}
     </>
   );
 }

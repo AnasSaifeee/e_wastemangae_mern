@@ -1,0 +1,19 @@
+.notification
+{
+    text-align: center;
+    width: 40rem;
+    height: 4rem;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgb(211, 209, 209);
+    margin-top: 10px;
+    padding-top: 10px;
+    letter-spacing: 2px;
+
+}
+
+.detail
+{
+    transform: translateY(-13px);
+    letter-spacing: 0px;
+}

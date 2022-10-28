@@ -99,7 +99,9 @@ app.post('/request',(req,res)=>
                 }
         
             );
-    db.query(
+
+app.get('/getrequest',(req,res)=>{
+              db.query(
               
               "SELECT pincode FROM collector_verification WHERE pincode=? ", 
               [pincode],
@@ -110,6 +112,8 @@ app.post('/request',(req,res)=>
                 }
         
             );
+})
+   
     
     
   
