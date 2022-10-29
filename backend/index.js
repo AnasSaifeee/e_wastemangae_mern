@@ -38,6 +38,9 @@ app.post("/signup", (req, res)=>{
         [ name, username, email, role, password, confirmpassword],
         (err, result) => {
             console.log(err);
+            if(!err){
+                res.send({message: "Successfully Registered"})
+            }
         }
 
     );

@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import User_Navbar from '../components/Navbar';
 
 const Schedule = () => {
+  
     const[name,setname]=useState('')
     const[email,setemail]=useState('')
     const[address,setaddress]=useState('')
@@ -57,6 +59,7 @@ const Schedule = () => {
    
   return (
     <>
+    <User_Navbar />
     <div>
   
   <div className="container">
@@ -177,4 +180,4 @@ const Schedule = () => {
   )
 }
 
-export default Schedule
+export default Schedule;

@@ -4,36 +4,34 @@ import DashboardNavbar from './Single user Dashboard/components/Navbar';
 import Navbar from './Navbar';
 import { BrowserRouter, Route,Router,Routes  } from 'react-router-dom';
 import Home from './Home';
-import Homepage from './Single user Dashboard/pages/Home';
 import Notifications from './Single user Dashboard/pages/Notifications';
 import Schedule from './Single user Dashboard/pages/Schedule';
 import Profile from './Profile';
 import Signin from './signin';
 import Signup from './signup';
-import Dashboard from './Dashboard';
-
+import Dashboard from './Single user Dashboard/components/Navbar';
+import Guidelines from './guidelines';
+import DashboardHome from './Single user Dashboard/pages/Home';
 
 function App() {
 
   return (
     <>
-
-    {/* <Profile/> */}
-    {/* <BrowserRouter> */}
-
     <BrowserRouter>
-
-           <Navbar/>
+    
       <Routes>
-          <Route path='/' exact element = {<Homepage/>} />
+          <Route path='/' exact element = {<Home/>} />
           <Route path='/signin' element = {<Signin/>} />
           <Route path='/signup' element = {<Signup/>} />
           <Route path='/Dashboard' element = {<Dashboard />} />
-                
+          <Route path='/guidelines' element = {<Guidelines />}/>
+          <Route path='/schedule' element = {<Schedule />}/> 
+          <Route path='/home' element = {<DashboardHome />}/>
+          <Route path='/profile' element = {<Profile />}/>
+          <Route path='/notifications' element = {<Notifications />}/>
       </Routes>
       </BrowserRouter>
 
-      <Signin />
     </>
   );
 }

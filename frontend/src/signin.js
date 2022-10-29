@@ -29,8 +29,7 @@ const Signin = (e) => {
       if (data[0].message) {
         setLoginstatus(data.message);
       } else {
-        // setLoginstatus(response.data[0].email)
-        navigate("/Dashboard");
+        navigate("/Profile");
       }
   });
   

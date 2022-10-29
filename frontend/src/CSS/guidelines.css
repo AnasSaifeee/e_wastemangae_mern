@@ -1,0 +1,165 @@
+.fw-light {
+  font-family: "Bai Jamjuree";
+  font-style: normal;
+  color: #45af69;
+  font-size: 64px;
+  line-height: 100%;
+  text-align: center;
+}
+
+.card {
+  background: #c4ddc4;
+  box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 13px;
+  text-align: center;
+  align-items: center;
+  width: 360px;
+  height: 540px;
+  /* left: 50px; */
+  padding-top: 10px;
+  margin-bottom: 20px;
+  transition: 1s;
+}
+
+.line1 {
+  border-top: 1px solid #45af69;
+  width: 327px;
+  height: 0px;
+  margin-top: -30px;
+}
+
+.rounded-circle {
+  z-index: 2;
+}
+
+.cardrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* transform: translateX(calc(var(--bs-gutter-x) * -0.8)); */
+}
+
+.registration {
+  font-family: "Bai Jamjuree";
+  font-style: normal;
+  color: #45af69;
+  font-size: 40px;
+  line-height: 100%;
+  text-align: center;
+}
+
+.subhead {
+  margin-top: -190px;
+}
+
+.card-title {
+  top: 550px;
+
+  font-family: "Bai Jamjuree";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 41px;
+  line-height: 100%;
+  /* identical to box height, or 41px */
+  line-height: 100%;
+  padding-top: inherit;
+  text-align: center;
+
+  /* Primary/Verde Grama */
+
+  color: #45af69;
+}
+
+.card-text {
+  width: 290px;
+  height: 180px;
+  left: 128px;
+  top: 757px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 125%;
+  /* or 30px */
+  padding-top: inherit;
+  text-align: center;
+
+  /* Text UI/Verde Cinza */
+
+  color: #4f5a72;
+}
+
+.button {
+  transform: translateY(-40px);
+}
+
+.butn {
+  width: 200px;
+  height: 45px;
+  background: #026107;
+  border-radius: 4px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 125%;
+  /* identical to box height, or 30px */
+
+  text-align: center;
+
+  /* Text UI/Branco */
+
+  color: #ffffff;
+}
+
+@media screen {
+  .row-cols-lg-3 > * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+svg {
+  transition: all 1s;
+}
+svg:hover {
+  transform: scale(1.1);
+  border: solid 4px #016cd8;
+}
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 12px 15px rgba(0, 0, 0, 0.5);
+}
+
+@media (min-width: 1310px) {
+  .row-cols-lg-3 > * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (min-width: 1073px) and (max-width: 1311px) {
+  .row-cols-lg-3 > * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1072px) {
+  .row-cols-lg-3 > * {
+    margin-inline: 20px;
+    align-items: center;
+  }
+}
+
+@media (min-width: 378px) and (max-width: 991px) {
+  .row-cols-lg-3 > * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

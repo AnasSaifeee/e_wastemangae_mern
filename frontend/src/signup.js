@@ -36,11 +36,8 @@ const Signup = (e) => {
       console.log(data);
       if (data.message) {
         setSignupstatus(data.message);
-      } else {
-        // setLoginstatus(response.data[0].email)
-        navigate("/Dashboard");
-      }
-      
+        navigate("/Signin");
+      } 
     });
   };
 
