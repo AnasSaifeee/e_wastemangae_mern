@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 const Profile = () => {
-   
-    
+       
     const[state,setstate]=useState("")
     const[district,setdistrict]=useState("")
     const[city,setcity]=useState("")
@@ -31,7 +30,7 @@ const Profile = () => {
 
   return (
   <>
-   <form className="needs-validation" onSubmit={Request}>
+   <form className="needs-validation">
 
     <div className="col-12">
           <label className="form-label">State</label>
@@ -50,7 +49,7 @@ const Profile = () => {
           <input type="text" className="form-control"  value={pincode} onChange={(e)=>setpincode(e.target.value)} placeholder="Pincode" required />
         </div>
         <div className="col-12">
-          <button className="btn btn-primary btn-lg" type="submit">Confirm and Send Request</button>
+          <button className="btn btn-primary btn-lg" type="submit" onClick={(e) => Request(e)}>Confirm and Send Request</button>
         </div>
    </form>
   </>
